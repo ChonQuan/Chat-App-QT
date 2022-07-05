@@ -1,7 +1,9 @@
-QT += quick
+QT += quick websockets
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        server.cpp \
+        serverworker.cpp
 
 resources.files = main.qml 
 resources.prefix = /$${TARGET}
@@ -17,3 +19,7 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    server.h \
+    serverworker.h
